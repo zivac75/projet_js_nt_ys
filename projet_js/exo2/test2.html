@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(5, 5, 65);
+
+        }
+        .popup, .presentation-video, .photos, .cv {
+    display: none;
+    width: fit-content;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #000;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+  
+}
+
+.buttons {
+    margin-top: 20px;
+   
+
+}
+
+.buttons button {
+    margin-right: 30px;
+    background-color: grey;
+    
+}
+.buttons button:hover {
+    margin-right: 30px;
+    background-color: rgb(61, 61, 208);
+    
+}
+.cv {
+    width: 80%;
+    height: 80%;
+}
+
+    </style>
+    <div class="buttons">
+        <button id="butform" onclick="showContactForm()">Formulaire de Contact</button>
+        <button id="butVid" onclick="showPresentationVideo()">Vidéo de Présentation</button>
+        <button id="butPhotos" onclick="showPhotos()">Photos</button>
+        <button id="butCv" onclick="showCV()">CV</button>
+    </div>
+
+    <div class="popup" id="contactForm">
+        <form >
+            <label for="name">Nom:</label>
+            <input type="text" id="name" name="name" placeholder="Votre nom.." required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Votre email.." required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Votre message.." style="height:100px" required></textarea>
+
+            <input type="submit" value="Envoyer">
+        </form>
+       
+        <button onclick="hideContactForm()">Fermer</button>
+    </div>
+
+    <div class="presentation-video" id="presentationVideo">
+        
+        <video controls width="100%" height="100%">
+          
+            <source src="/Fat Mizzo - MTV CRIBS (Official Virtual Performance Video) Prod. by 8ird.mp4">
+            Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+        <button onclick="hidePresentationVideo()">Fermer</button>
+    </div>
+
+    <div class="photos" id="photos">
+        
+        <img src="programmer-5863772_1280.jpg" alt="Photo " width="100%" height="100%">
+        <button onclick="hidePhotos()">Fermer</button>
+    </div>
+    <div id="cv" class="cv">
+    <iframe src="modelcv.pdf" width="100%" height="95%" ></iframe>
+    <button onclick="hideCV()">Fermer</button>
+</div>
+    <script >
+    function showContactForm() {
+        document.getElementById('contactForm').style.display = 'block';
+        document.getElementById('butform').style.backgroundColor = 'red';
+    }
+    
+    function hideContactForm() {
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('butform').style.backgroundColor = 'grey';
+    }
+    
+    function showPresentationVideo() {
+        document.getElementById('presentationVideo').style.display = 'block';
+        document.getElementById('butVid').style.backgroundColor = 'red';
+    }
+    
+    function hidePresentationVideo() {
+        document.getElementById('presentationVideo').style.display = 'none';
+        document.getElementById('butVid').style.backgroundColor = 'grey';
+    }
+    
+    function showPhotos() {
+        document.getElementById('photos').style.display = 'block';
+        document.getElementById('butPhotos').style.backgroundColor = 'red';
+    }
+    
+    function hidePhotos() {
+        document.getElementById('photos').style.display = 'none';
+        document.getElementById('butPhotos').style.backgroundColor = 'grey';
+    }
+    
+    function showCV() {
+        document.getElementById('cv').style.display = 'block';
+        document.getElementById('butCv').style.backgroundColor = 'red';
+    }
+    function hideCV() {
+        document.getElementById('cv').style.display = 'none';
+        document.getElementById('butCv').style.backgroundColor = 'grey';
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empoule</title>
+</head>
+<body>
+    <style>
+   /* utilisée pour aligner les éléments le long de l'axe principal d'un conteneur  */
+        body{justify-content: center;
+        text-align: center;
+    align-items: center;}
+
+    </style>
+    <img id="ir" src="image1.jpg"   height="500px" width="350px" alt="azertyugftyt">
+    <button>allumer</button>
+    <script>
+
+        var but=document.querySelector('button');//utilisé pour manipuler des éléments HTML à l'aide de JavaScript
+        var pic=document.querySelector('img');
+        
+      
+            but.addEventListener('click',function(){ //cest pour ajouter un evene,ent a la button 
+                var source=pic.getAttribute('src');// pour stocker la valeur de la source img
+                if(source=='image1.jpg'){
+            source=pic.setAttribute('src','image2.jpg');
+            but.textContent="eteindre";
+            son= new Audio('clap.mp3') //pour stocker un son dans lelement
+                son.play()// pour lire le son
+        }
+            else{
+                source=pic.setAttribute('src','image1.jpg');//change le contenu du texte du bouton référencé par la variable
+                but.textContent="allumer";
+                son= new Audio('clap.mp3')
+                son.play()
+            }
+        
+        
+        })
+    
+    </script>
+  
+</body>
+</html>

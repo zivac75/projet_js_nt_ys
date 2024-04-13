@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>VERIFIER</button>
+    <style>
+        body{
+         
+        margin-top: 23%;
+        text-align: center;
+    }
+    button{
+        padding: 30px;
+        border-radius: 4px;
+    }
+    </style>
+    <script>
+         var nbAliatoire = Math.floor(Math.random() * 100) + 1;
+        console.log(nbAliatoire)   ; 
+       do {
+       
+        var nbSaisie=prompt('veuiller saisir un nombre entre 1 et 100')
+        nbSaisie=parseInt(nbSaisie);
+       
+    
+    }while(nbSaisie<0 || nbSaisie>100)
+        alert('MERCI!!!! veuiller appuyer sur le button pour jouer')
+
+        but=document.querySelector('button')
+        but.addEventListener('click',function(){
+            if(nbSaisie==nbAliatoire){
+                alert('JACKPOT!!! \n le nombre deviné est exacte')
+            }else if(nbSaisie<nbAliatoire){
+                alert('TROP PETIT')
+            }else{
+                alert('TROP GRAND')
+            }
+        })
+    </script>
+</body>
+</html>
